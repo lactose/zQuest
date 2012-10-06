@@ -13,7 +13,14 @@
   };
 
   Map.prototype.move = function(direction) {
-    this.loc = this.loc[direction];
+    var me = this;
+    
+    if(me.loc[direction]) {
+      me.loc = me.loc[direction];
+      console.log("You've entered " + me.loc.title);
+      return;
+    } 
+    console.log("There's nothing in that direction.");
   }
 
   var createMap = function(title) {
