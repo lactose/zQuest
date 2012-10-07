@@ -1,6 +1,7 @@
 var   Map = require("./Map")
     , Room = require("./Room")
-    , Game = require("./Game");
+    , Game = require("./Game")
+    , Item = require("./Item");
 
 (function() {
 
@@ -26,6 +27,11 @@ var   Map = require("./Map")
   boiler.east = kitchen;
   kitchen.north = arena;
   arena.south = kitchen;
+
+
+  var knife = Item.createItem("Knife", "A dull, rusty kitchen knife.");
+
+  kitchen.items.push(knife);
 
   newMap.init(throne, kitchen);
 

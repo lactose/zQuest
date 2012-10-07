@@ -32,11 +32,10 @@ var readline = require("readline")
         case 'w':
           map.move('west');
           break;
+        case 'u':
+          break;
         case 'l':
-          if(map.loc.north) me.message += map.loc.north.title + " lies to the north.\n";
-          if(map.loc.south) me.message += map.loc.south.title + " lies to the south.\n";
-          if(map.loc.east) me.message += map.loc.east.title + " lies to the east.\n";
-          if(map.loc.west) me.message += map.loc.west.title + " lies to the west.\n";
+          map.loc.survey();
           break;
         case 'help':
           me.message = "ZQUEST commands: \n";
