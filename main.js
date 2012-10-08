@@ -29,7 +29,7 @@ var   Map = require("./Map")
   arena.south = kitchen;
 
 
-  var knife = Item.createItem("Knife", "A dull, rusty kitchen knife.");
+  var knife = Item.createItem("Knife", "A dull, rusty kitchen knife.", "You now have the knife.");
 
   kitchen.items.push(knife);
 

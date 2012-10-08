@@ -25,6 +25,20 @@
     if(me.west) console.log(  me.west.title + " lies to the west.");
   }
 
+  Room.prototype.use = function() {
+    var me = this;
+    if(me.items.length > 0) {
+      var l = me.items.length - 1;
+      do {
+        me.items[l].use();
+      } while(l--);
+    }
+
+    
+
+  }
+
+
   var createRoom = function(title) {
     return new Room(title);
   }

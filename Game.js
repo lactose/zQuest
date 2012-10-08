@@ -5,6 +5,7 @@ var readline = require("readline")
 
   function Game(map) {
     this.map = map;
+    this.items = [];
   }
 
   Game.prototype.start = function() {
@@ -33,6 +34,7 @@ var readline = require("readline")
           map.move('west');
           break;
         case 'u':
+          map.loc.use();
           break;
         case 'l':
           map.loc.survey();
