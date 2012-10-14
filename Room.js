@@ -19,6 +19,13 @@
       } while(l--);
       console.log("");
     }
+    if(me.entities.length > 0) {
+      var l = me.entities.length - 1;
+      do {
+        me.entities[l].describe();
+      } while(l--);
+      console.log("");
+    }
     if(me.north) console.log( me.north.title + " lies to the north.");
     if(me.south) console.log(  me.south.title + " lies to the south.");
     if(me.east) console.log(  me.east.title + " lies to the east.");
@@ -33,9 +40,16 @@
         me.items[l].use();
       } while(l--);
     }
+  }
 
-    
-
+  Room.prototype.talk = function() {
+    var me = this;
+    if(me.entities.length > 0) {
+      var l = me.entities.length - 1;
+      do {
+        me.entities[l].talk();
+      } while(l--);
+    }
   }
 
 

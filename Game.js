@@ -36,6 +36,9 @@ var readline = require("readline")
         case 'u':
           map.loc.use();
           break;
+        case 't':
+          map.loc.talk();
+          break;
         case 'l':
           map.loc.survey();
           break;
@@ -46,6 +49,8 @@ var readline = require("readline")
           me.message += "   e:    go east\n";
           me.message += "   w:    go west\n";
           me.message += "   l:    look around you\n";
+          me.message += "   u:    use an item\n";
+          me.message += "   t:    talk to somebody\n";
           me.message += "   a:    attack\n";
           me.message += "   q:    quit\n";
           break;

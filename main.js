@@ -1,7 +1,8 @@
 var   Map = require("./Map")
     , Room = require("./Room")
     , Game = require("./Game")
-    , Item = require("./Item");
+    , Item = require("./Item")
+    , Entity = require("./Entity");
 
 (function() {
 
@@ -30,8 +31,10 @@ var   Map = require("./Map")
 
 
   var knife = Item.createItem("Knife", "A dull, rusty kitchen knife.", "You now have the knife.");
+  var maiden = Entity.createEntity("Fair maiden", {message: "Hello sir. Beware of the knight in the arena.", desc: "A beautiful lady."}); 
 
   kitchen.items.push(knife);
+  pantry.entities.push(maiden);
 
   newMap.init(throne, kitchen);
 
